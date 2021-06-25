@@ -11,7 +11,9 @@ router.get('/stock', (req, res) => {
     time: 'day'
   }
   superagent.get(`http://ali-stock.showapi.com/realtime-k?${qs.stringify(params)}`).set('Authorization', `APPCODE ${AppCode}`).end((err, result) => {
-    res.send(result.text)
+    const resObj = JSON.parse(result.text)
+    const list = resObj.showapi_res_body.dataList
+    res.send(list && list.slice(0, +req.query.count))
   })
 })
 
