@@ -6,6 +6,8 @@
   "author": "肖子立 <xiaozlb@digitalchina.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "qs": "^6.10.1",
+    "superagent": "^6.1.0"
   }
 }
